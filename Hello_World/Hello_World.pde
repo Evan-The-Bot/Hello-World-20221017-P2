@@ -1,4 +1,5 @@
 //Global Variables
+void setup() {
 int appWidth, appHeight;
 //
 //Declare Geometry Square, landscape, portrait
@@ -17,4 +18,12 @@ if (width > displayWidth) appWidth = 0; //CANVAS will not fit
 if ( height > displayHeight ) appHeight = 0; //CANVAS= height will not fit
 if ( appWidth != 0 && appHeight != 0) print("Display Geometry is Good to Go.");
 if ( appWidth == 0 || appHeight == 0 ) println("Stop, You've violated the Geometry!");
- 
+} //End setup
+//
+void draw() {} //End draw 
+//
+void keyPressed() {} //End keyPressed
+// 
+void mousePressed() {} //End mousePressed
+//
+// End Main Program
