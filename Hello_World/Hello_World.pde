@@ -3,7 +3,7 @@ int appWidth, appHeight;
 //
 void setup() {
   //Declare Display Geometry: square, landscape, portrait
-  size(1900, 1080); //Use size for debugging
+  size(1000, 1000); //Use size for debugging
   //fullScreen(); //Use fullScreen for easy deployment
   appWidth = width;
   appHeight = height;
@@ -16,17 +16,6 @@ void setup() {
   String ls="Landscape or Square", p="portrait", DO="Display Orientation", instruct=" turn your phone";
   //String orientation = ( appWidth >= appHeight ) ? ls : p;
   //println (DO, orientation);
-  if ( appWidth < appHeight ) { //Declare Landscape Mode
-    println(instruct);
-  } else {
-    if ( appWidth > displayWidth ) appWidth = 0; //CANVAS-width will not fit
-    if ( appHeight > displayHeight ) appHeight = 0; //CANVAS-height will not fit
-    if ( appWidth != 0 && appHeight != 0 ) {
-    print("Display Geoemtry is Good to Go.");
-    } else {
-     println("Stop you have violated the geometry");
-    }
-  }
   //
   //If ORIENTATION is wrong ... feedback to change it
   //Fit CANVAS into Display Monitor
@@ -37,9 +26,17 @@ void setup() {
 } //End setup
 //
 void draw() {
- ellipse(150,150,150,150);
- triangle(150,150,150,150,150,150);
- triangle(150,150,150,150,150,150);
+ line(50,50,500,500);
+ line(50,500,500,50);
+ line(500,50,50,50);
+ line(50,500,50,50);
+ line(500,50,500,500);
+ line(500,500,50,500);
+ triangle(260,50,50,50,260,260);
+ triangle(50,260,260,260,50,50);
+ //triangle(50,50,50,50,50,50);
+ //triangle(50,50,50,50,50,50);
+
  } //End draw
 //
 void keyPressed() {} //End keyPressed
