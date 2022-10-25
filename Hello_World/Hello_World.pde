@@ -1,5 +1,6 @@
 //Global Variables
 int appWidth, appHeight;
+float centerHeight, centerWidth, xStart, yStart, widthRect, heightRect;
 //
 void setup() {
   //Declare Display Geometry: square, landscape, portrait
@@ -23,19 +24,26 @@ void setup() {
   if ( appHeight > displayHeight ) appHeight = 0; //CANVAS-height will not fit
   if ( appWidth != 0 && appHeight != 0 ) print("Display Geometry is Good to Go.");
   if ( appWidth == 0 || appHeight == 0 ) println("Stop you have violated the geometry");
+    
+  //population
+  centerWidth = width * 1/2;
+  centerHeight = height * 1/2;
+  xStart= centerWidth - (width * 1/4);
+  yStart = centerHeight - (height * 1/4);
+  widthRect = width * 1/2; 
+  heightRect = height * 1/2;
 } //End setup
 //
 void draw() {
- line(50,50,500,500);
- line(50,500,500,50);
- line(500,50,50,50);
- line(50,500,50,50);
- line(500,50,500,500);
- line(500,500,50,500);
+ rect(xStart,yStart,widthRect, heightRect); 
+ //line(50,50,500,500);
+ //line(50,500,500,50);
+ //line(500,50,50,50);
+ //line(50,500,50,50);
+ //line(500,50,500,500);
+ //line(500,500,50,500);
  triangle(260,50,50,50,260,260);
  triangle(50,260,260,260,50,50);
- //triangle(50,50,50,50,50,50);
- //triangle(50,50,50,50,50,50);
 
  } //End draw
 //
