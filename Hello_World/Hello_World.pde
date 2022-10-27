@@ -1,10 +1,12 @@
 //Global Variables
 int appWidth, appHeight;
 float centerHeight, centerWidth, xStart, yStart, widthRect, heightRect;
+color black=#000000, white=#FFFFFF, cyan=#2DA7C4, green=#2DC46B;
+float thick, thin;
 //
 void setup() {
   //Declare Display Geometry: square, landscape, portrait
-  size(1000, 1000); //Use size for debugging
+  size(1920, 1080); //Use size for debugging
   //fullScreen(); //Use fullScreen for easy deployment
   appWidth = width;
   appHeight = height;
@@ -26,24 +28,39 @@ void setup() {
   if ( appWidth == 0 || appHeight == 0 ) println("Stop you have violated the geometry");
     
   //population
-  centerWidth = width * 1/2;
-  centerHeight = height * 1/2;
-  xStart= centerWidth - (width * 1/4);
-  yStart = centerHeight - (height * 1/4);
-  widthRect = width * 1/2; 
-  heightRect = height * 1/2;
+  centerWidth = width * 3/2;
+  centerHeight = height * 1/20;
+  xStart= centerWidth - (width * 1/40);
+  yStart = centerHeight - (height * 1/40);
+  widthRect = width * 1/20; 
+  heightRect = height * 2/50;
+    thick = appWidth * 1/70;
+  thin =  appWidth * 1/140;
 } //End setup
 //
 void draw() {
+  background(225); //Gray Scale 0-255
+  //random(a, b)
+  background( color( random(0, 255), random(255), random(255) ) ); //color(r,g,b), Casting 
+  //Night Mode
+  background(black);
+  //
+  strokeWeight(thick); 
+  stroke(green);
+  fill(cyan);
+  rect(xStart, yStart, widthRect, heightRect);
+  //fill(white);
+  //stroke(black);
+  strokeWeight(1);
  rect(xStart,yStart,widthRect, heightRect); 
- //line(50,50,500,500);
- //line(50,500,500,50);
- //line(500,50,50,50);
- //line(50,500,50,50);
- //line(500,50,500,500);
- //line(500,500,50,500);
- triangle(260,50,50,50,260,260);
- triangle(50,260,260,260,50,50);
+ line(50,50,1000,1000);
+ line(50,1000,1000,50);
+ line(1000,50,50,50);
+ line(50,1000,50,50);
+ line(1000,50,1000,1000);
+ line(1000,1000,50,1000);
+ triangle(1000,50,50,50,1000,250);
+ triangle(50,1000,250,1000,50,50);
 
  } //End draw
 //
